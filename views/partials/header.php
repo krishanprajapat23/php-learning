@@ -1,7 +1,7 @@
 <?php 
 $SiteName = "PHP Learn";
 
-require "function.php";
+// require "function.php";
 
 ?>
 

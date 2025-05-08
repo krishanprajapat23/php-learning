@@ -9,12 +9,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="<?= isCurrURL('/php-learn/') || isCurrURL('/php-learn/index.php') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learn/') || isCurrURL('/php-learn/index.php') ? 'page' : ''; ?>" href="./">Home</a>
+          <a class="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'page' : ''; ?>" href="./">Home</a>
         </li>
         <li class="nav-item">
-          <a class="<?= isCurrURL('/php-learn/about.php') ? 'nav-link active' : 'nav-link'; ?>"
-          aria-current="<?= isCurrURL('/php-learn/about.php') ? 'page' : ''; ?>"
-          href="./about.php">About</a>
+          <a class="<?= isCurrURL('/php-learning/about') ? 'nav-link active' : 'nav-link'; ?>"
+          aria-current="<?= isCurrURL('/php-learning/about') ? 'page' : ''; ?>"
+          href="./about">About</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
