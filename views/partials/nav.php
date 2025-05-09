@@ -12,6 +12,11 @@
           <a class="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'page' : ''; ?>" href="./">Home</a>
         </li>
         <li class="nav-item">
+          <a class="<?= isCurrURL('/php-learning/notes') ? 'nav-link active' : 'nav-link'; ?>"
+          aria-current="<?= isCurrURL('/php-learning/notes') ? 'page' : ''; ?>"
+          href="./notes">Notes</a>
+        </li>
+        <li class="nav-item">
           <a class="<?= isCurrURL('/php-learning/about') ? 'nav-link active' : 'nav-link'; ?>"
           aria-current="<?= isCurrURL('/php-learning/about') ? 'page' : ''; ?>"
           href="./about">About</a>

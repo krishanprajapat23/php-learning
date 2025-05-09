@@ -10,6 +10,8 @@ $uri = str_replace($base, '', $uri); // Now $uri is like "/about"
 // define routes
 $routes = [
     '/' => 'controllers/index.php',
+    '/notes' => 'controllers/notes.php',
+    '/note' => 'controllers/note.php',
     '/about' => 'controllers/about.php',
 ];
 
