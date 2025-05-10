@@ -4,7 +4,7 @@ $config = require('config.php');
 
 $db = new Database($config['database']);
 
-$id = $_GET['id'] ?? null;
+$id = $_GET['id'];
 
 $currentUserId = 1;
 
@@ -15,15 +15,10 @@ $params = [
 
 // $params = [':id' => $id];
 
-$note = $db->query($query, $params)->fetch();
+$note = $db->query($query, $params)->findOrFail();
 
-if(!$note) {
-    abort();
-};
 
-if($note['user_id'] !== $currentUserId) {
-    abort(Response::FORBIDDEN);
-}
+authorize($note['user_id'] === $currentUserId);
 
 // dd($note);
 
