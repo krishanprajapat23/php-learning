@@ -3,9 +3,9 @@
 
 <main>
         <div class="card m-4 card-body">
-            <h1 class="card-title"><?= $note['title'] ?></h1>
-            <small>Created on: <?= $note['created_on'] ?></small>
-            <p><?= $note['body'] ?></p>
+            <h1 class="card-title"><?= htmlspecialchars($note['title']) ?></h1>
+            <small>Created on: <?= htmlspecialchars($note['created_on']) ?></small>
+            <p><?= htmlspecialchars($note['body']) ?></p>
         </div>  
 </main>
 
