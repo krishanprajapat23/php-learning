@@ -25,4 +25,4 @@ authorize($note['user_id'] === $currentUserId);
 // dd($note['title']);
 
 
-require "views/note.view.php";
+require "views/notes/show.view.php";

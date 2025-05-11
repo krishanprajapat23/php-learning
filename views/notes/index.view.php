@@ -1,5 +1,5 @@
-<?php require "partials/header.php" ?>
-<?php require "partials/nav.php" ?>
+<?php require "views/partials/header.php" ?>
+<?php require "views/partials/nav.php" ?>
 
 <main>
     <div class="container">
@@ -22,5 +22,5 @@
 
 </main>
 
-<?php require "partials/footer.php" ?>
+<?php require "views/partials/footer.php" ?>
 

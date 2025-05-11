@@ -12,4 +12,4 @@ $notes = $db->query($query)->get();
 // dd($notes);
 
 
-require "views/notes.view.php";
+require "views/notes/index.view.php";

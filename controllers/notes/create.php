@@ -10,9 +10,6 @@ $db = new Database($config['database']);
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // dd($_POST);
 
-    // If title and body is set, use their value.
-    // If not, use empty string '' instead.
-
     $title = $_POST['title'];
     $body = $_POST['body'];
     
@@ -44,4 +41,4 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-require "views/note-create.view.php";
+require "views/notes/create.view.php";
