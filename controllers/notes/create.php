@@ -1,6 +1,10 @@
 <?php
 
-require base_path('Validator.php');
+use Core\Database;
+use Core\Validator;
+
+// by using namespace we no longer need below require;
+// require base_path('Validator.php');
 
 $config = require base_path('config.php');
 

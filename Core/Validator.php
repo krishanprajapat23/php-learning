@@ -1,5 +1,6 @@
 <?php
 
+namespace Core;
 
 class Validator {
     // pure function can be static can be called like
