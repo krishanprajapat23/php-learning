@@ -1,10 +1,10 @@
 <?php
 
-$routes = require "routes.php";
+$routes = require base_path("routes.php");
 
 function routeToController($uri, $routes) {
     if(array_key_exists($uri, $routes)) {
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     } else {
         abort();
     }
@@ -15,8 +15,8 @@ function routeToController($uri, $routes) {
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 
-$base = '/php-learning';
-$uri = str_replace($base, '', $uri); // Now $uri is like "/about"
+$baseFolder = '/php-learning';
+$uri = str_replace($baseFolder, '', $uri); // Now $uri is like "/about"
 
 
 routeToController($uri, $routes);
@@ -25,7 +25,7 @@ routeToController($uri, $routes);
 function abort($code = 404) {
 
     http_response_code($code);
-    require "views/{$code}.php";
+    require base_path("views/{$code}.php");
 
     die();
 }

@@ -2,7 +2,7 @@
 
 const BASE_PATH = __DIR__ . '/../';
 
-require BASE_PATH . 'function.php';
+require BASE_PATH . 'Core/function.php';
 
 
 //this fn will autoload asa the browser loads the page...
@@ -11,4 +11,4 @@ spl_autoload_register(function ($Class){
     
 });
 
-require base_path('router.php');
+require base_path('Core/router.php');
