@@ -1,5 +1,5 @@
-<?php require "views/partials/header.php" ?>
-<?php require "views/partials/nav.php" ?>
+<?php require base_path("views/partials/header.php") ?>
+<?php require base_path("views/partials/nav.php") ?>
 
 <main>
     <div class="container p-4">
@@ -27,5 +27,5 @@
     </div>
 </main>
 
-<?php require "views/partials/footer.php" ?>
+<?php require base_path("views/partials/footer.php") ?>
 

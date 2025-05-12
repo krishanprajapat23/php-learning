@@ -20,3 +20,18 @@ function authorize($condition, $statusCode = Response::FORBIDDEN){
     return abort($statusCode);
   }
 }
+
+
+// fn for getting base path
+
+
+
+function base_path($path) {
+  return BASE_PATH . $path;
+}
+
+function view($path, $attrs = []) {
+  extract($attrs);
+  require base_path('views/' . $path);
+}
+
