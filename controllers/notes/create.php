@@ -42,6 +42,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $db->query($query, $params);
     }
 
+    header('location: ./notes');
+    exit();
 }
 
 
