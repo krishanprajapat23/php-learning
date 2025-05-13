@@ -4,7 +4,7 @@
 <main>
     <div class="container p-4">
         <h1 class="mb-4">Create Note</h1>
-        <form method="POST">
+        <form method="POST" action="./notes">
             <div class="input-box mb-3">
                 <label for="title">Note Title</label>
                 <input class="form-control" type="text" name="title" id="title" value="<?= $_POST['title'] ?? '' ?>"/>

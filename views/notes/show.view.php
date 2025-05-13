@@ -6,7 +6,8 @@
             <h1 class="card-title"><?= htmlspecialchars($note['title']) ?></h1>
             <small>Created on: <?= htmlspecialchars($note['created_on']) ?></small>
             <p><?= htmlspecialchars($note['body']) ?></p>
-            <form method="POST">
+            <form class="mt-3" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
                 <input type="hidden" name="id" value="<?= $note['id'] ?>">
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
