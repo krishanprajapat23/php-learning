@@ -12,13 +12,17 @@ spl_autoload_register(function ($class){
     
     $class = str_replace('\\',DIRECTORY_SEPARATOR, $class);
     //with namespace
-
+    
     require base_path("{$class}.php");
-
-
+    
+    
     // without namespace 
     // require base_path("Core/{$Class}.php");    
 });
+
+require base_path('bootstrap.php');
+
+
 
 $router = new \Core\Router();
 
@@ -36,3 +40,4 @@ $uri = str_replace($baseFolder, '', $uri); // Now $uri is like "/about"
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 $router->route($uri, $method);
+
