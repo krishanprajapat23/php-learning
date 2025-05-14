@@ -6,11 +6,15 @@
             <h1 class="card-title"><?= htmlspecialchars($note['title']) ?></h1>
             <small>Created on: <?= htmlspecialchars($note['created_on']) ?></small>
             <p><?= htmlspecialchars($note['body']) ?></p>
-            <form class="mt-3" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="hidden" name="id" value="<?= $note['id'] ?>">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
+            <div class="d-flex gap-3 flex-wrap">
+                <a href="./note/edit?id=<?= $note['id'] ?>" class="btn btn-secondary">Update</a>
+                
+                <form method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
         </div>  
 </main>
 

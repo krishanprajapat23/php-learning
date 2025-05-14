@@ -5,23 +5,22 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
+$errors = [];
+
 $id = $_GET['id'] ?? null;
 
 $currentUserId = 1;
 
-
-$query = "SELECT * FROM notes WHERE id = :id";
-$params = [
+$note = $db->query("SELECT * FROM notes WHERE id = :id", [
     ':id' => $id
-];
-
-
-$note = $db->query($query, $params)->findOrFail();
+])->findOrFail();
 
 
 authorize($note['user_id'] === $currentUserId);
 
 
-view("notes/show.view.php", [
+
+view("notes/edit.view.php", [
+    "errors" => $errors,
     "note" => $note,
 ]);
