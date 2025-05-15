@@ -11,11 +11,13 @@
         <li class="nav-item">
           <a class="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'page' : ''; ?>" href="./">Home</a>
         </li>
+        <?php if($_SESSION['user'] ?? false) : ?>
         <li class="nav-item">
           <a class="<?= isCurrURL('/php-learning/notes') ? 'nav-link active' : 'nav-link'; ?>"
             aria-current="<?= isCurrURL('/php-learning/notes') ? 'page' : ''; ?>"
             href="./notes">Notes</a>
         </li>
+        <?php endif; ?>
         <li class="nav-item">
           <a class="<?= isCurrURL('/php-learning/about') ? 'nav-link active' : 'nav-link'; ?>"
             aria-current="<?= isCurrURL('/php-learning/about') ? 'page' : ''; ?>"
@@ -39,14 +41,20 @@
                   <h6 class="mt-2 text-body-emphasis"><?= $_SESSION['user']['email'] ?></h6>
                 </div>
               </div>
-              <div class="overflow-auto scrollbar">
-                <a class="btn btn-sm btn-secondary text-center w-100" href="#!">Sign out</a>
+              <div class="logout-wrapper">
+                <form method="POST" action="./session">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn btn-sm btn-secondary text-center w-100">Sign out</button>
+                </form>
               </div>
             </div>
           </div>
 
         <?php else : ?>
-          <a href="./register" class="btn btn-warning">Register</a>
+          <div class="d-flex gap-1">
+            <a href="./register" class="btn btn-warning">Register</a>
+            <a href="./login" class="btn btn-outline-success">Login</a>
+          </div>
         <?php endif; ?>
         </form>
     </div>
