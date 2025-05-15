@@ -26,8 +26,6 @@ if (!empty($errors)) {
    return view("notes/create.view.php", [
         "errors" => $errors,
     ]);
-
-
 }
 
 $query = "INSERT INTO `notes` (`title`, `body`, `created_on`, `user_id`) VALUES (:title, :body, now(), :user_id)";

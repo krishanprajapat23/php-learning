@@ -50,7 +50,7 @@ class Router {
                 // apply the middleware [middlware is the bridge between the req to the core of the app]
                 Middleware::resolve($route['middleware']);
 
-                return require base_path($route['controller']);
+                return require base_path("Http/controllers/{$route['controller']}");
             }
         }
 
