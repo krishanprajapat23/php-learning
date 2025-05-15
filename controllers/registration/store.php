@@ -55,7 +55,7 @@ $query = "INSERT INTO users (name, email, password, created_on) VALUES (:name, :
 $db->query($query, [
     ':name' => $name,
     ':email' => $email,
-    ':password' => $password,
+    ':password' => password_hash($password, PASSWORD_BCRYPT), // password hashing
 ]);
 
 // set the session that user has logged in ....
