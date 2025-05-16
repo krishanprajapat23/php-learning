@@ -10,7 +10,7 @@
                         <div class="text-center mb-4">
                             <h1>Login</h1>
                         </div>
-                        <form action="./login" method="POST">
+                        <form action="./session" method="POST">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" value="<?= $_POST['email'] ?? '' ?>">

@@ -1,6 +1,7 @@
 <?php
 use Http\Form\LoginForm;
 use Core\Authenticator;
+use Core\Session;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -22,6 +23,7 @@ if ($formValidate) {
     $form->setErrors('password', 'No matching account found for that email address and password.');
 }
 
-return view("session/create.view.php", [
-    "errors" => $form->getErrors(),
-]);
+// set the flash key value in session part of [PRG]
+Session::flash('errors', $form->getErrors());
+
+return redirect('./login');
