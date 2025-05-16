@@ -1,8 +1,9 @@
 <?php
 
-// log out the user
+use Core\Authenticator;
 
-logout();
+// log out the user
+(new Authenticator())->logout();
 
 //after logout redirect the login page
 header('location: ./login');
