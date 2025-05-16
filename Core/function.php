@@ -1,6 +1,7 @@
 <?php
 
 use Core\Response;
+use Core\Session;
 
 function dd($value) {
     echo "<pre>";
@@ -44,4 +45,9 @@ function view($path, $attrs = []) {
 function redirect($path) {
   header("location: {$path}");
   exit();
+}
+
+// get the old value from a form after a page refresh
+function old($key, $default = '') {
+  return Session::get('old')[$key] ?? $default;
 }

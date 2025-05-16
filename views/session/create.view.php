@@ -13,7 +13,7 @@
                         <form action="./session" method="POST">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" value="<?= $_POST['email'] ?? '' ?>">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" value="<?= old('email') ?>">
                                 <?php if(isset($errors['email'])) : ?> 
                                     <p class="erorr-text text-danger small"><?= $errors['email'] ?></p>
                                 <?php endif; ?>

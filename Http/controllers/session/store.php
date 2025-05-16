@@ -26,4 +26,9 @@ if ($formValidate) {
 // set the flash key value in session part of [PRG]
 Session::flash('errors', $form->getErrors());
 
+// set the email in session for to get the form field the value when refreshed
+Session::flash('old', [
+    'email' => $email
+]);
+
 return redirect('./login');
