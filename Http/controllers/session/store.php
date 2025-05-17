@@ -1,34 +1,25 @@
 <?php
 use Http\Form\LoginForm;
 use Core\Authenticator;
-use Core\Session;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$form = new LoginForm();
 
-$formValidate = $form->validate($email, $password);
-
-// if form did not validate 
-if ($formValidate) {
-    // if form validate then check the auth in db
-    $auth = new Authenticator();
-    // if user found in db
-    if($auth->attempt($email, $password)) {
-        // then redirect to the dashboard 
-        redirect('./');
-    }
-    
-    $form->setErrors('password', 'No matching account found for that email address and password.');
-}
-
-// set the flash key value in session part of [PRG]
-Session::flash('errors', $form->getErrors());
-
-// set the email in session for to get the form field the value when refreshed
-Session::flash('old', [
-    'email' => $email
+// check if form is validate 
+$form = LoginForm::validate($attr = [
+    'email'=> $email,
+    'password'=> $password,
 ]);
 
-return redirect('./login');
+// if form validate then check the auth in db
+$auth = new Authenticator();
+$signIn = $auth->attempt($attr['email'], $attr['password']);
+
+// if user credentials wrong... then throw the error and redirect to the prevUrl
+if(!$signIn) {
+    $form->setErrors('password', 'No matching account found for that email address and password.')->throw();
+}
+
+// else redirect to the dashboard 
+redirect('./');

@@ -4,6 +4,7 @@ session_start();
 
 use Core\Response;
 use Core\Session;
+use Core\ValidationException;
 
 const BASE_PATH = __DIR__ . '/../';
 
@@ -43,8 +44,21 @@ $uri = str_replace($baseFolder, '', $uri); // Now $uri is like "/about"
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 
-// controller will load the view
-$router->route($uri, $method);
+try {
+    // controller will load the view
+    $router->route($uri, $method);
+} catch (ValidationException $exception) {
+
+    // dd($_SERVER);
+    
+    // set the flash key value in session part of [PRG]
+    Session::flash('errors', $exception->getErrors());
+
+    // set the email in session for to get the form field the value when refreshed
+    Session::flash('old', $exception->getOld());
+
+    return redirect($router->prevUrl());
+}
 
 // clear the flash key in session
 Session::unflash();
