@@ -62,5 +62,4 @@ $db->query($query, [
 // logged in
 (new Authenticator)->login(['email' => $email]);
 
-header('location: ./');
-exit();
+redirect('./dashboard');

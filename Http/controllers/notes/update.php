@@ -11,7 +11,7 @@ $id = $_POST['id'];
 $title = $_POST['title'];
 $body = $_POST['body'];
 
-$currentUserId = 1;
+$currentUserId = userId();
 
 $errors = [];
 

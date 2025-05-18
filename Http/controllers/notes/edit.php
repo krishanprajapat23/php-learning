@@ -9,7 +9,7 @@ $errors = [];
 
 $id = $_GET['id'] ?? null;
 
-$currentUserId = 1;
+$currentUserId = userId();
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", [
     ':id' => $id

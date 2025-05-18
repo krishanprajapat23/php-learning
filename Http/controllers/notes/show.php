@@ -5,10 +5,13 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
+
 $id = $_GET['id'] ?? null;
 
-$currentUserId = 1;
+$currentUserId = userId();
 
+
+// dd($currentUserId);
 
 $query = "SELECT * FROM notes WHERE id = :id";
 $params = [

@@ -22,4 +22,4 @@ if(!$signIn) {
 }
 
 // else redirect to the dashboard 
-redirect('./');
+redirect('./dashboard');

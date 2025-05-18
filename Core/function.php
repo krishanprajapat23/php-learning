@@ -51,3 +51,8 @@ function redirect($path) {
 function old($key, $default = '') {
   return Session::get('old')[$key] ?? $default;
 }
+
+//get the current user id from session
+function userId() {
+    return $_SESSION['user']['id'] ?? false;
+}

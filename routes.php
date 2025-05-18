@@ -4,6 +4,7 @@ $router->get('/', 'index.php');
 
 $router->get('/notes', 'notes/index.php')->only('auth');
 
+$router->get('/dashboard', 'dashboard.php')->only('auth');
 $router->get('/note', 'notes/show.php')->only('auth');
 $router->delete('/note', 'notes/destroy.php')->only('auth');
 $router->get('/note/edit', 'notes/edit.php')->only('auth');

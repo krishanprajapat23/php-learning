@@ -14,5 +14,6 @@ $SiteName = "PHP Learn";
     <base href="/php-learning/">
     <title><?= $SiteName ?></title>
     <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
   </head>
   <body>

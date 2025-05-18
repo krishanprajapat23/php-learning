@@ -24,8 +24,10 @@ class Authenticator {
     // set the session that user has logged in ....
     public function login($user) {
         $_SESSION['user'] = [
+            'id' => $user['id'],
             'email' => $user['email'],
         ];
+
 
         // when login user regenerate the session id
         session_regenerate_id(true);

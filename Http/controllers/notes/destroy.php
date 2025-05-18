@@ -5,7 +5,7 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-$currentUserId = 1;
+$currentUserId = userId();
 
 //get the current note by id 
 $query = "SELECT * FROM notes WHERE id = :id";

@@ -3,8 +3,11 @@
 use Core\App;
 use Core\Database;
 use Core\Validator;
+use Core\Authenticator;
 
 $db = App::resolve(Database::class);
+
+$currentUserId = userId();
 
 $errors = [];
 
@@ -33,7 +36,7 @@ $query = "INSERT INTO `notes` (`title`, `body`, `created_on`, `user_id`) VALUES 
 $params = [
     ':title' => $title,
     ':body' => $body,
-    'user_id' => 1,
+    'user_id' => $currentUserId,
 ];
 
 $db->query($query, $params);

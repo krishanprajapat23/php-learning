@@ -1,0 +1,179 @@
+:root {
+  --primary-color: #5ae881;
+  --secondary-color: #4ecdc4;
+  --background-color: #f7fff7;
+  --highlight-color: #ffe66d;
+  --error-color: #ff6b6b;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Arial", sans-serif;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar a {
+  color: white;
+}
+
+.hero-section {
+  background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+  color: var(--background-color);
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 12px 40px;
+  font-size: 18px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-btn-primary {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.cta-btn-primary:hover {
+  background-color: var(--highlight-color);
+}
+
+.cta-btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.cta-btn-secondary:hover {
+  background-color: var(--primary-color);
+}
+
+/* Feature Section */
+.feature-card {
+  background-color: var(--background-color);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--background-color);
+}
+
+.footer a:hover {
+  color: var(--highlight-color);
+}
+
+.story-section {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.story-text {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.story-image {
+  flex: 1;
+  text-align: center;
+}
+.story-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.mission-values {
+  background-color: var(--background-color);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.value-card {
+  background-color: var(--secondary-color);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.value-card h4 {
+  font-size: 1.5rem;
+}
+.value-card p {
+  font-size: 1rem;
+  color: white;
+}
+
+.welcome-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+.welcome-section h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.create-note-btn {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.create-note-btn:hover {
+  background-color: var(--highlight-color);
+  color: #333;
+}
+
+.empty-state-emoji {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+  .create-note-btn {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

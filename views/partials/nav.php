@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="./">
       <?= $SiteName ?>
@@ -9,7 +9,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'page' : ''; ?>" href="./">Home</a>
+          <?php if ($_SESSION['user'] ?? false) : ?>
+            <a class="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/dashboard') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/dashboard') ? 'page' : ''; ?>" href="./dashboard">Dashboard</a>
+            <?php else : ?>
+              <a class="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'nav-link active' : 'nav-link'; ?>" aria-current="<?= isCurrURL('/php-learning/') || isCurrURL('/php-learning/index') ? 'page' : ''; ?>" href="./">Home</a>
+            <?php endif; ?>
         </li>
         <?php if($_SESSION['user'] ?? false) : ?>
         <li class="nav-item">
