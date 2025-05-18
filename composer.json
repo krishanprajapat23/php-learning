@@ -1,0 +1,16 @@
+{
+    "name": "anonymous/php-learning",
+    "authors": [
+        {
+            "name": "Krish",
+            "email": "111554369+krishanprajapat23@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\" : "Core/",
+            "Http\\" : "Http/"
+        }
+    }
+}

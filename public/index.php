@@ -1,28 +1,18 @@
 <?php 
 
-session_start();
-
 use Core\Response;
 use Core\Session;
 use Core\ValidationException;
 
 const BASE_PATH = __DIR__ . '/../';
 
+// now with composer we can use autoload like this
+require BASE_PATH . 'vendor/autoload.php';
+
+session_start();
+
 require BASE_PATH . 'Core/function.php';
 
-
-//this fn will autoload asa the browser loads the page...
-spl_autoload_register(function ($class){
-    
-    $class = str_replace('\\',DIRECTORY_SEPARATOR, $class);
-    //with namespace
-    
-    require base_path("{$class}.php");
-    
-    
-    // without namespace 
-    // require base_path("Core/{$Class}.php");    
-});
 
 require base_path('bootstrap.php');
 
