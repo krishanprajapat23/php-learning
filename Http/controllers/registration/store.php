@@ -1,6 +1,7 @@
 <?php
 
 use Core\App;
+use Core\Authenticator;
 use Core\Database;
 use Core\Validator;
 
@@ -58,10 +59,8 @@ $db->query($query, [
     ':password' => password_hash($password, PASSWORD_BCRYPT), // password hashing
 ]);
 
-// set the session that user has logged in ....
-$_SESSION['user'] = [
-    'email' => $email,
-];
+// logged in
+(new Authenticator)->login(['email' => $email]);
 
 header('location: ./');
 exit();
